@@ -4,7 +4,8 @@ let s:save_cpo = &cpo " save user coptions
 set cpo&vim " reset them to defaults
 
 " mapping smallest range to 'o'
-inoremap <C-o> <CMD>lua require("what_next").predict_next_edit()<CR>
+nnoremap <C-l> <CMD>lua require("what-next").predict_next_edit(false)<CR>
+vnoremap <C-l> <ESC>:lua require("what-next").predict_next_edit(true)<CR>
 
 
 let &cpo = s:save_cpo " and restore after
